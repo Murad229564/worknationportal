@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+from zipfile import ZipFile
+import os
+
+# Create directory
+project_dir = "/mnt/data/WorkNationPortal"
+os.makedirs(project_dir, exist_ok=True)
+
+# Define HTML content with better design
+html_content_v2 = '''<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -8,61 +16,176 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <style>
-    /* CSS code as provided earlier */
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+      color: #333;
+    }
+    header {
+      background: url('https://images.unsplash.com/photo-1584433144859-1fc3ab64d3c3?auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+    }
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .btn-primary {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: #1a73e8;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 1rem;
+      transition: background 0.3s ease;
+    }
+    .btn-primary:hover {
+      background-color: #155ac1;
+    }
+    .section {
+      padding: 2.5rem 1rem;
+      background-color: #ffffff;
+    }
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    .card {
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 320px;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .card h3 {
+      margin-top: 0;
+    }
+    .card p {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+    .card a {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background-color: #1a73e8;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: #1a73e8;
+      color: white;
+      margin-top: 2rem;
+    }
+    @media (max-width: 600px) {
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <h1><i class="fa-solid fa-gift"></i> WorkNationPortal</h1>
-    <p>Your gateway to exclusive USA gift cards and real job opportunities.</p>
+    <p>Premium USA Gift Card Promotions & Remote Job Openings</p>
   </header>
   <section class="hero">
-    <h2>🎁 Claim Free Gift Cards & Find Remote Jobs</h2>
-    <p>Explore limited-time gift card offers and work-from-home job openings exclusively available for USA residents.</p>
-    <a href="#offers" class="btn-primary">Get Started</a>
+    <h2>🎁 Discover Real Gift Card Rewards & Work-from-Home Jobs</h2>
+    <p>Top-rated offers curated for USA users. Claim now before they expire!</p>
+    <a href="#offers" class="btn-primary">Start Exploring</a>
   </section>
   <section id="offers" class="section">
-    <h2 style="text-align:center; margin-bottom: 1rem;">🔥 Featured Gift Card Offers</h2>
+    <h2 style="text-align:center; margin-bottom: 2rem;">🔥 Hot Gift Card Campaigns</h2>
     <div class="cards">
       <div class="card">
-        <h3>Walmart $100 Gift Card</h3>
-        <p>Limited-time USA offer. Click below to see if you're eligible!</p>
+        <img src="https://cdn.pixabay.com/photo/2016/11/18/15/15/gift-1835444_1280.jpg" alt="Walmart Card">
+        <h3>Walmart $100 Card</h3>
+        <p>Answer a short quiz to get this exclusive Walmart reward!</p>
         <a href="YOUR_CPA_LINK_HERE" target="_blank">Claim Now</a>
       </div>
       <div class="card">
+        <img src="https://cdn.pixabay.com/photo/2016/09/01/07/38/gift-1638595_1280.jpg" alt="Amazon Card">
         <h3>Amazon $50 Voucher</h3>
-        <p>Answer a few questions & qualify for a $50 gift card!</p>
+        <p>Limited-time opportunity for active shoppers in the USA!</p>
         <a href="YOUR_CPA_LINK_HERE" target="_blank">Get Offer</a>
       </div>
       <div class="card">
-        <h3>BestBuy Gift Campaign</h3>
-        <p>Don't miss out! Secure your BestBuy reward today.</p>
-        <a href="YOUR_CPA_LINK_HERE" target="_blank">Access Deal</a>
+        <img src="https://cdn.pixabay.com/photo/2017/12/09/08/18/gift-3008379_1280.jpg" alt="BestBuy Card">
+        <h3>BestBuy Gift Bundle</h3>
+        <p>Complete a simple signup and grab your reward today!</p>
+        <a href="YOUR_CPA_LINK_HERE" target="_blank">Join Now</a>
       </div>
     </div>
   </section>
   <section class="section">
-    <h2 style="text-align:center; margin-bottom: 1rem;">💼 USA Remote Job Offers</h2>
+    <h2 style="text-align:center; margin-bottom: 2rem;">💼 Latest Work-from-Home Jobs</h2>
     <div class="cards">
       <div class="card">
-        <h3>Customer Support Agent</h3>
-        <p>Hiring remote workers – flexible hours, no experience required.</p>
+        <img src="https://cdn.pixabay.com/photo/2015/01/08/18/24/startup-593341_1280.jpg" alt="Support Job">
+        <h3>Remote Support Agent</h3>
+        <p>Apply now to assist clients online. No prior experience needed.</p>
         <a href="YOUR_CPA_LINK_HERE" target="_blank">Apply Now</a>
       </div>
       <div class="card">
-        <h3>Survey Researcher</h3>
-        <p>Make money from home by answering short surveys. USA only.</p>
-        <a href="YOUR_CPA_LINK_HERE" target="_blank">Start Earning</a>
+        <img src="https://cdn.pixabay.com/photo/2015/09/17/17/19/office-942422_1280.jpg" alt="Survey Job">
+        <h3>Survey Participant</h3>
+        <p>Earn for each survey you complete – from the comfort of home!</p>
+        <a href="YOUR_CPA_LINK_HERE" target="_blank">Start Now</a>
       </div>
       <div class="card">
-        <h3>Virtual Assistant Role</h3>
-        <p>Remote admin position for USA residents. Weekly pay.</p>
+        <img src="https://cdn.pixabay.com/photo/2017/08/10/07/32/laptop-2610593_1280.jpg" alt="Virtual Assistant">
+        <h3>Virtual Assistant</h3>
+        <p>Flexible job for organized individuals. Weekly payouts!</p>
         <a href="YOUR_CPA_LINK_HERE" target="_blank">See Details</a>
       </div>
     </div>
   </section>
   <footer>
-    &copy; 2025 WorkNationPortal. All rights reserved.
+    &copy; 2025 WorkNationPortal. Built for opportunity seekers in the USA.
   </footer>
 </body>
 </html>
+'''
+
+# Save updated HTML
+html_path = os.path.join(project_dir, "index.html")
+with open(html_path, "w", encoding="utf-8") as f:
+    f.write(html_content_v2)
+
+# Create a new ZIP file
+zip_path = "/mnt/data/WorkNationPortal_Pro.zip"
+with ZipFile(zip_path, 'w') as zipf:
+    zipf.write(html_path, arcname="index.html")
+
+zip_path
