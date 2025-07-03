@@ -1,12 +1,4 @@
-from zipfile import ZipFile
-import os
-
-# Create directory
-project_dir = "/mnt/data/WorkNationPortal"
-os.makedirs(project_dir, exist_ok=True)
-
-# Define HTML content with better design
-html_content_v2 = '''<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -25,7 +17,7 @@ html_content_v2 = '''<!DOCTYPE html>
       color: #333;
     }
     header {
-      background: url('https://images.unsplash.com/photo-1584433144859-1fc3ab64d3c3?auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Giftbox_background.jpg/1600px-Giftbox_background.jpg') no-repeat center center/cover;
       color: white;
       padding: 4rem 2rem;
       text-align: center;
@@ -129,19 +121,19 @@ html_content_v2 = '''<!DOCTYPE html>
     <h2 style="text-align:center; margin-bottom: 2rem;">🔥 Hot Gift Card Campaigns</h2>
     <div class="cards">
       <div class="card">
-        <img src="https://cdn.pixabay.com/photo/2016/11/18/15/15/gift-1835444_1280.jpg" alt="Walmart Card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Walmart_card.png/640px-Walmart_card.png" alt="Walmart Card">
         <h3>Walmart $100 Card</h3>
         <p>Answer a short quiz to get this exclusive Walmart reward!</p>
         <a href="YOUR_CPA_LINK_HERE" target="_blank">Claim Now</a>
       </div>
       <div class="card">
-        <img src="https://cdn.pixabay.com/photo/2016/09/01/07/38/gift-1638595_1280.jpg" alt="Amazon Card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Amazon.com_Gift_Card.png/800px-Amazon.com_Gift_Card.png" alt="Amazon Card">
         <h3>Amazon $50 Voucher</h3>
         <p>Limited-time opportunity for active shoppers in the USA!</p>
         <a href="YOUR_CPA_LINK_HERE" target="_blank">Get Offer</a>
       </div>
       <div class="card">
-        <img src="https://cdn.pixabay.com/photo/2017/12/09/08/18/gift-3008379_1280.jpg" alt="BestBuy Card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Best_Buy_Gift_Card.png/640px-Best_Buy_Gift_Card.png" alt="BestBuy Card">
         <h3>BestBuy Gift Bundle</h3>
         <p>Complete a simple signup and grab your reward today!</p>
         <a href="YOUR_CPA_LINK_HERE" target="_blank">Join Now</a>
@@ -152,19 +144,19 @@ html_content_v2 = '''<!DOCTYPE html>
     <h2 style="text-align:center; margin-bottom: 2rem;">💼 Latest Work-from-Home Jobs</h2>
     <div class="cards">
       <div class="card">
-        <img src="https://cdn.pixabay.com/photo/2015/01/08/18/24/startup-593341_1280.jpg" alt="Support Job">
+        <img src="https://images.unsplash.com/photo-1598256989800-5a72160d70fe?fit=crop&w=800&q=80" alt="Support Job">
         <h3>Remote Support Agent</h3>
         <p>Apply now to assist clients online. No prior experience needed.</p>
         <a href="YOUR_CPA_LINK_HERE" target="_blank">Apply Now</a>
       </div>
       <div class="card">
-        <img src="https://cdn.pixabay.com/photo/2015/09/17/17/19/office-942422_1280.jpg" alt="Survey Job">
+        <img src="https://images.unsplash.com/photo-1616587227125-6e3a2e2a927f?fit=crop&w=800&q=80" alt="Survey Job">
         <h3>Survey Participant</h3>
         <p>Earn for each survey you complete – from the comfort of home!</p>
         <a href="YOUR_CPA_LINK_HERE" target="_blank">Start Now</a>
       </div>
       <div class="card">
-        <img src="https://cdn.pixabay.com/photo/2017/08/10/07/32/laptop-2610593_1280.jpg" alt="Virtual Assistant">
+        <img src="https://images.unsplash.com/photo-1587613751371-ec2bb8aee93b?fit=crop&w=800&q=80" alt="Virtual Assistant">
         <h3>Virtual Assistant</h3>
         <p>Flexible job for organized individuals. Weekly payouts!</p>
         <a href="YOUR_CPA_LINK_HERE" target="_blank">See Details</a>
@@ -176,16 +168,3 @@ html_content_v2 = '''<!DOCTYPE html>
   </footer>
 </body>
 </html>
-'''
-
-# Save updated HTML
-html_path = os.path.join(project_dir, "index.html")
-with open(html_path, "w", encoding="utf-8") as f:
-    f.write(html_content_v2)
-
-# Create a new ZIP file
-zip_path = "/mnt/data/WorkNationPortal_Pro.zip"
-with ZipFile(zip_path, 'w') as zipf:
-    zipf.write(html_path, arcname="index.html")
-
-zip_path
