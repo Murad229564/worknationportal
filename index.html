@@ -2,15 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>WorkNationPortal - Gift Cards & Remote Jobs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WorkNationPortal - Gift Cards & Online Jobs</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      margin: 0;
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+      background: #f4f7fa;
       color: #222;
+      line-height: 1.6;
     }
     header {
       background: #003366;
@@ -18,115 +19,187 @@
       text-align: center;
       padding: 2rem 1rem;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.2rem;
-    }
-    header p {
-      font-size: 1rem;
-      margin-top: 0.5rem;
-    }
-    .section {
-      padding: 2rem 1rem;
-      text-align: center;
-    }
+    header h1 { font-size: 2.5rem; }
+    header p { font-size: 1.1rem; }
+
+    .section { padding: 2rem 1rem; text-align: center; }
     .cards {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 1.5rem;
+      margin-top: 1rem;
     }
     .card {
       background: white;
-      width: 300px;
-      padding: 1rem;
       border-radius: 10px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
+      width: 300px;
+      padding: 1rem;
+      transition: 0.3s ease;
     }
-    .card:hover {
-      transform: translateY(-5px);
-    }
+    .card:hover { transform: translateY(-5px); }
     .card img {
       width: 100%;
-      border-radius: 6px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
     }
-    .card h3 {
-      margin-top: 1rem;
-      color: #003366;
-    }
+    .card h3 { margin: 0.8rem 0 0.5rem; color: #003366; }
     .btn {
       display: inline-block;
       margin-top: 1rem;
-      padding: 0.6rem 1.2rem;
       background: #0070f3;
       color: white;
-      border: none;
-      border-radius: 6px;
+      padding: 0.6rem 1.2rem;
       text-decoration: none;
+      border-radius: 5px;
       font-weight: bold;
     }
-    .btn:hover {
-      background: #005bb5;
-    }
+    .btn:hover { background: #005bb5; }
+
     footer {
-      text-align: center;
-      padding: 1rem;
       background: #003366;
       color: white;
+      padding: 1rem;
+      text-align: center;
     }
+
+    .countdown {
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      color: #d9534f;
+    }
+
     @media(max-width: 600px) {
-      .cards {
-        flex-direction: column;
-        align-items: center;
-      }
+      .cards { flex-direction: column; align-items: center; }
     }
   </style>
 </head>
 <body>
   <header>
     <h1>WorkNationPortal</h1>
-    <p>Your Gateway to USA Gift Cards & Online Jobs</p>
+    <p>Exclusive Gift Cards & Work-from-Home Jobs in <span id="location">your area</span></p>
   </header>
 
-  <section class="section">
+  <section class="section" style="background: #eef4f7;">
     <h2>🎁 Gift Card Offers</h2>
+    <div class="countdown" id="timer">Offer ends in: 05:00</div>
     <div class="cards">
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1621267746463-b9d5dc6d0f4c?auto=format&fit=crop&w=600&q=80" alt="Walmart Card" />
+        <img src="https://images.unsplash.com/photo-1621267746463-b9d5dc6d0f4c?auto=format&fit=crop&w=600&q=80" />
         <h3>Walmart $100 Gift Card</h3>
-        <p>Claim your reward after a quick quiz!</p>
-        <a class="btn" href="https://your-cpa-link-here.com" target="_blank">Claim Now</a>
+        <p>Answer 3 simple questions to claim.</p>
+        <a class="btn" href="https://your-cpa-link.com" target="_blank">Claim Now</a>
       </div>
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1592136434319-cb4d7aa94f31?auto=format&fit=crop&w=600&q=80" alt="Amazon Card" />
+        <img src="https://images.unsplash.com/photo-1592136434319-cb4d7aa94f31?auto=format&fit=crop&w=600&q=80" />
         <h3>Amazon $50 Voucher</h3>
-        <p>Perfect for your shopping needs. Limited time!</p>
-        <a class="btn" href="https://your-cpa-link-here.com" target="_blank">Get Offer</a>
+        <p>Instant access, limited supply!</p>
+        <a class="btn" href="https://your-cpa-link.com" target="_blank">Get Offer</a>
       </div>
     </div>
   </section>
 
-  <section class="section" style="background:#f9fafb;">
-    <h2>💼 Remote Job Opportunities</h2>
+  <section class="section">
+    <h2>💼 Work-from-Home Jobs</h2>
     <div class="cards">
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1581093588401-a79f38d2cb34?auto=format&fit=crop&w=600&q=80" alt="Support Job" />
-        <h3>Customer Support</h3>
-        <p>Flexible job, no experience required!</p>
-        <a class="btn" href="https://your-cpa-link-here.com" target="_blank">Apply Now</a>
+        <img src="https://images.unsplash.com/photo-1581093588401-a79f38d2cb34?auto=format&fit=crop&w=600&q=80" />
+        <h3>Remote Chat Support</h3>
+        <p>Get paid to assist customers online.</p>
+        <a class="btn" href="https://your-cpa-link.com" target="_blank">Apply Now</a>
       </div>
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1603791452906-cdfd8f1e8d88?auto=format&fit=crop&w=600&q=80" alt="Survey Job" />
-        <h3>Paid Surveys</h3>
-        <p>Answer surveys and earn fast.</p>
-        <a class="btn" href="https://your-cpa-link-here.com" target="_blank">Start Now</a>
+        <img src="https://images.unsplash.com/photo-1603791452906-cdfd8f1e8d88?auto=format&fit=crop&w=600&q=80" />
+        <h3>Paid Surveys (USA)</h3>
+        <p>Earn from home answering surveys daily.</p>
+        <a class="btn" href="https://your-cpa-link.com" target="_blank">Start Now</a>
       </div>
     </div>
+  </section>
+
+  <section class="section" style="background: #ffffff;">
+    <h2>🏆 Recent Winners</h2>
+    <p>People who recently claimed gift cards or job offers:</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Emily R. (Texas)</h3>
+        <p>🎉 Won a $100 Walmart Gift Card just 5 mins ago!</p>
+      </div>
+      <div class="card">
+        <h3>James T. (New York)</h3>
+        <p>✅ Got hired for a remote support job today.</p>
+      </div>
+      <div class="card">
+        <h3>Linda B. (Florida)</h3>
+        <p>🎁 Claimed her Amazon $50 voucher!</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: #eef4f7;">
+    <h2>💬 User Reviews</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Michael D.</h3>
+        <p>"I thought this was fake until I actually got the gift card in my inbox. Unbelievable!"</p>
+      </div>
+      <div class="card">
+        <h3>Samantha J.</h3>
+        <p>"Signed up for a job and got hired in 3 days. Highly recommended!"</p>
+      </div>
+      <div class="card">
+        <h3>Rachel K.</h3>
+        <p>"My brother and I both claimed different offers. It really works!"</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#fff;">
+    <h2>📊 Live Claim Stats</h2>
+    <p id="liveCounter" style="font-size:1.4rem;color:#d9534f;">Loading stats...</p>
   </section>
 
   <footer>
     &copy; 2025 WorkNationPortal. All rights reserved.
   </footer>
+
+  <script>
+    // Countdown timer
+    let time = 300;
+    const timerEl = document.getElementById('timer');
+    const interval = setInterval(() => {
+      const min = Math.floor(time / 60).toString().padStart(2, '0');
+      const sec = (time % 60).toString().padStart(2, '0');
+      timerEl.textContent = 'Offer ends in: ' + min + ':' + sec;
+      time--;
+      if (time < 0) clearInterval(interval);
+    }, 1000);
+
+    // Geo IP Location
+    fetch("https://ipapi.co/json")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("location").textContent = data.city + ", " + data.country;
+      })
+      .catch(() => {
+        document.getElementById("location").textContent = "your area";
+      });
+
+    // Real-time claim stats
+    function randomCount(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    function updateCounter() {
+      const claimedToday = 350 + randomCount(1, 50);
+      const liveNow = randomCount(5, 20);
+      document.getElementById('liveCounter').innerHTML =
+        claimedToday + " users have claimed today<br>" +
+        liveNow + " users claiming right now!";
+    }
+    setInterval(updateCounter, 4000);
+    updateCounter();
+  </script>
 </body>
 </html>
