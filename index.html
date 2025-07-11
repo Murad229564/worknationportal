@@ -3,117 +3,208 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>WorkNationPortal - Gift Cards & Jobs</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+
+  <!-- Monetag Verification Code -->
+  <meta name="monetag" content="2cfdbc5410aae2c7cd005bdf5ef455f5" />
+
+  <title>USA Gift & Job Offers</title>
+
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', sans-serif; background: #f5f9fc; color: #222; line-height: 1.6; }
-    header { background: #003366; color: white; text-align: center; padding: 2rem 1rem; }
-    header h1 { font-size: 2.2rem; font-weight: 800; }
-    header p { font-size: 1.1rem; margin-top: 0.5rem; }
-    .section { padding: 2rem 1rem; text-align: center; }
-    .cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-top: 1rem; }
-    .card { background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); width: 300px; padding: 1rem; transition: transform 0.3s ease; }
-    .card:hover { transform: translateY(-6px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
-    .card img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; }
-    .card h3 { margin-top: 0.8rem; color: #003366; font-weight: 700; }
-    .card p { margin-top: 0.3rem; color: #555; font-size: 0.95rem; }
-    .btn { display: inline-block; margin-top: 1rem; background: #0070f3; color: white; padding: 0.6rem 1.2rem; text-decoration: none; border-radius: 5px; font-weight: 700; transition: background 0.3s ease; }
-    .btn:hover { background: #005bb5; }
-    #timer { font-size: 1.25rem; color: #d9534f; margin-top: 10px; font-weight: 700; }
-    footer { background: #003366; color: white; text-align: center; padding: 1rem; margin-top: 2rem; font-size: 0.9rem; }
+    /* বেসিক স্টাইল */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background: #f7f9fc;
+      color: #333;
+    }
+    header {
+      background: #004aad;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 1rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      letter-spacing: 1.5px;
+    }
+    main {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .offers {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+    }
+    .card img {
+      max-width: 140px;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      object-fit: contain;
+      height: 100px;
+    }
+    .card h2 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.2rem;
+      color: #004aad;
+    }
+    .card p {
+      font-size: 0.9rem;
+      margin: 0 0 1rem 0;
+    }
+    .btn-claim {
+      background: #004aad;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 0.6rem 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
+    .btn-claim:hover {
+      background: #00337a;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.85rem;
+      color: #666;
+      background: #eaeaea;
+      margin-top: 3rem;
+    }
+    .timer-container {
+      background: #e3f2fd;
+      border-radius: 8px;
+      max-width: 320px;
+      margin: 0 auto 2rem auto;
+      padding: 1rem 1.5rem;
+      text-align: center;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #004aad;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+    }
+    /* Responsive */
     @media (max-width: 600px) {
-      .cards { flex-direction: column; align-items: center; }
-      .card { width: 90%; }
+      .card img {
+        height: 80px;
+        max-width: 100px;
+      }
+      header h1 {
+        font-size: 1.4rem;
+      }
+      .timer-container {
+        font-size: 1.2rem;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>WorkNationPortal</h1>
-    <p>Exclusive Gift Cards & Remote Jobs in <span id="location">your area</span></p>
-  </header>
 
-  <section class="section" style="background:#eef4f7;">
-    <h2>🎁 Gift Card Offers</h2>
-    <div id="timer">Offer ends in...</div>
-    <div class="cards">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1600185366533-94e334a6c38c?auto=format&fit=crop&w=600&q=80" alt="Walmart Gift Card" />
-        <h3>Walmart $100 Gift Card</h3>
-        <p>Answer simple questions to claim it now.</p>
-        <a class="btn" href="https://your-cpa-link.com" target="_blank">Claim Now</a>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?auto=format&fit=crop&w=600&q=80" alt="Amazon Voucher" />
-        <h3>Amazon $50 Voucher</h3>
-        <p>Only a few remaining. Act fast!</p>
-        <a class="btn" href="https://your-cpa-link.com" target="_blank">Get Offer</a>
-      </div>
+<header>
+  <h1>USA Gift & Job Offers</h1>
+</header>
+
+<main>
+
+  <!-- Real-Time Countdown Timer -->
+  <div class="timer-container" id="countdownTimer">
+    Offer ends in: <span id="time">Loading...</span>
+  </div>
+
+  <!-- Offers Section -->
+  <section class="offers">
+
+    <!-- Gift Card Offer Example -->
+    <div class="card">
+      <img src="https://i.ibb.co/0n2fTzr/walmart-giftcard.png" alt="Walmart Gift Card" />
+      <h2>Walmart $100 Gift Card</h2>
+      <p>Claim your $100 Walmart gift card now! Limited time offer.</p>
+      <a href="https://yourcpalink1.com" target="_blank" rel="noopener noreferrer" class="btn-claim">Claim Now</a>
     </div>
+
+    <div class="card">
+      <img src="https://i.ibb.co/1q6jvW9/amazon-giftcard.png" alt="Amazon Gift Card" />
+      <h2>Amazon $50 Gift Card</h2>
+      <p>Grab an Amazon $50 gift card instantly. Hurry up!</p>
+      <a href="https://yourcpalink2.com" target="_blank" rel="noopener noreferrer" class="btn-claim">Claim Now</a>
+    </div>
+
+    <!-- Job Offer Example -->
+    <div class="card">
+      <img src="https://i.ibb.co/Ydc6j67/job-offer.png" alt="Job Offer" />
+      <h2>USA Remote Job Offers</h2>
+      <p>Apply now for remote jobs with great pay and flexible hours.</p>
+      <a href="https://yourcpalink3.com" target="_blank" rel="noopener noreferrer" class="btn-claim">Apply Now</a>
+    </div>
+
   </section>
 
-  <section class="section" style="background:#ffffff;">
-    <h2>💬 What People Are Saying</h2>
-    <div class="cards">
-      <div class="card"><h3>John S.</h3><p>"Super easy! Got my $100 gift card in 3 days."</p></div>
-      <div class="card"><h3>Maria G.</h3><p>"I found my first remote job here, and I'm loving it!"</p></div>
-      <div class="card"><h3>Kevin L.</h3><p>"No scam! It’s legit and pays off if you follow the steps."</p></div>
-    </div>
-  </section>
+</main>
 
-  <section class="section" style="background:#eef4f7;">
-    <h2>🏆 Real-Time Leaderboard</h2>
-    <div id="leaderboard" class="cards">
-      <div class="card"><h3>Emily R. (TX)</h3><p>🎁 Claimed $100 Walmart Card</p></div>
-      <div class="card"><h3>David M. (CA)</h3><p>✅ Hired as Survey Panelist</p></div>
-      <div class="card"><h3>Linda K. (FL)</h3><p>🎉 Received Amazon Voucher</p></div>
-    </div>
-  </section>
+<footer>
+  &copy; 2025 USA Gift & Job Offers. All rights reserved.
+</footer>
 
-  <footer>&copy; 2025 WorkNationPortal. All rights reserved.</footer>
+<script>
+  // Real-time countdown timer set to reset at midnight every day,
+  // and counts down 2 days from last midnight
+  function updateTimer() {
+    const now = new Date();
 
-  <script>
-    const countdownTarget = new Date(new Date().getTime() + 1000 * 60 * 60 * 42).getTime();
-    const timerEl = document.getElementById('timer');
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = countdownTarget - now;
-      if (distance < 0) {
-        timerEl.textContent = "This offer has expired.";
-        return;
-      }
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      timerEl.textContent = `Offer ends in: ${days}d ${hours}h ${minutes}m ${seconds}s`;
-    }
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
+    // Next midnight (start of next day)
+    const nextMidnight = new Date(now);
+    nextMidnight.setHours(24, 0, 0, 0);
 
-    fetch("https://ipapi.co/json")
-      .then(res => res.json())
-      .then(data => { document.getElementById("location").textContent = data.city + ", " + data.country; })
-      .catch(() => { document.getElementById("location").textContent = "your area"; });
+    // Calculate difference in milliseconds from now to next midnight
+    const diffToMidnight = nextMidnight - now;
 
-    const leaderboard = document.getElementById("leaderboard");
-    const sampleUsers = [
-      {name:"Jacob W. (OH)", msg:"🎁 Claimed Walmart Gift Card"},
-      {name:"Sarah P. (NY)", msg:"✅ Got Hired Remotely"},
-      {name:"Nathan T. (NV)", msg:"🎉 Received $50 Amazon Card"},
-      {name:"Olivia M. (TX)", msg:"✅ Joined Paid Survey Program"},
-    ];
-    function rotateLeaderboard() {
-      const next = sampleUsers.shift();
-      const div = document.createElement("div");
-      div.className = "card";
-      div.innerHTML = `<h3>${next.name}</h3><p>${next.msg}</p>`;
-      leaderboard.appendChild(div);
-      leaderboard.removeChild(leaderboard.children[0]);
-      sampleUsers.push(next);
-    }
-    setInterval(rotateLeaderboard, 5000);
-  </script>
+    // Since we want a 2-day countdown based on midnight resets,
+    // total countdown = diffToMidnight + 24 hours (86400000 ms)
+    const totalCountdown = diffToMidnight + 86400000;
+
+    // Convert totalCountdown to seconds
+    let secondsLeft = Math.floor(totalCountdown / 1000);
+
+    const days = Math.floor(secondsLeft / 86400);
+    secondsLeft %= 86400;
+    const hours = Math.floor(secondsLeft / 3600);
+    secondsLeft %= 3600;
+    const minutes = Math.floor(secondsLeft / 60);
+    const seconds = secondsLeft % 60;
+
+    const formatNum = (n) => n.toString().padStart(2, '0');
+
+    // Show as "1 day 18:16:43" or "0 days 05:30:20"
+    const daysText = days > 0 ? days + (days === 1 ? " day " : " days ") : "";
+
+    const timeString = daysText + formatNum(hours) + ":" + formatNum(minutes) + ":" + formatNum(seconds);
+
+    document.getElementById('time').textContent = timeString;
+  }
+
+  updateTimer();
+  setInterval(updateTimer, 1000);
+</script>
+
 </body>
 </html>
