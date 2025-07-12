@@ -3,14 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
-  <!-- Monetag Verification Code -->
-  <meta name="monetag" content="2cfdbc5410aae2c7cd005bdf5ef455f5" />
-
   <title>WorkNationPortal - Rewards & Jobs</title>
-
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
-  
+  <meta name="monetag" content="2cfdbc5410aae2c7cd005bdf5ef455f5"> <!-- Verification -->
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Inter', sans-serif; background: #f5f9fc; color: #222; line-height: 1.6; }
@@ -28,8 +23,6 @@
     .btn:hover { background: #005bb5; }
     #timer { font-size: 1.25rem; color: #d9534f; margin-top: 10px; font-weight: 700; }
     footer { background: #003366; color: white; text-align: center; padding: 1rem; margin-top: 2rem; font-size: 0.9rem; }
-    a {color: #f0f0f0;}
-    a:hover {text-decoration: underline;}
     @media (max-width: 600px) {
       .cards { flex-direction: column; align-items: center; }
       .card { width: 90%; }
@@ -37,7 +30,6 @@
   </style>
 </head>
 <body>
-
   <header>
     <h1>WorkNationPortal</h1>
     <p>Free Gift Cards & Remote Jobs – USA Only</p>
@@ -51,13 +43,13 @@
         <img src="https://images.unsplash.com/photo-1600185366533-94e334a6c38c?auto=format&fit=crop&w=600&q=80" alt="Walmart Gift Card" />
         <h3>$100 Walmart Gift Card</h3>
         <p>Answer 5 simple questions and claim your gift.</p>
-        <a class="btn" href="https://yourcpalink1.com" target="_blank" rel="noopener noreferrer">Claim Now</a>
+        <a class="btn" href="#">Claim Now</a>
       </div>
       <div class="card">
         <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?auto=format&fit=crop&w=600&q=80" alt="Remote Job" />
         <h3>Remote Survey Jobs</h3>
         <p>Apply now and start working from home.</p>
-        <a class="btn" href="https://yourcpalink2.com" target="_blank" rel="noopener noreferrer">Apply Today</a>
+        <a class="btn" href="#">Apply Today</a>
       </div>
     </div>
   </section>
@@ -85,26 +77,23 @@
     <p><a href="#">Privacy Policy</a> | <a href="#">Terms</a> | <a href="#">Contact</a></p>
   </footer>
 
+  <!-- 🔁 Countdown Timer -->
   <script>
-    // ===================
-    // Countdown Timer Logic
-    // ===================
     function getTargetTime() {
       const now = new Date();
-      const nextMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
-      // 2 দিন পরের মধ্যরাত
-      const target = new Date(nextMidnight.getTime() + 24 * 60 * 60 * 1000);
-      return target;
+      const midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0); // Next midnight
+      const twoDaysLater = new Date(midnight.getTime() + 24 * 60 * 60 * 1000); // +1 day
+      return twoDaysLater;
     }
 
     const timerEl = document.getElementById("timer");
-    let targetTime = getTargetTime();
+    const targetTime = getTargetTime();
 
     function updateCountdown() {
       const now = new Date().getTime();
       const distance = targetTime - now;
       if (distance < 0) {
-        targetTime = getTargetTime();
+        timerEl.textContent = "Offer expired.";
         return;
       }
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -116,10 +105,10 @@
 
     setInterval(updateCountdown, 1000);
     updateCountdown();
+  </script>
 
-    // ===================
-    // Real-Time Leaderboard Logic
-    // ===================
+  <!-- 🔁 Leaderboard Rotator -->
+  <script>
     const leaderboard = document.getElementById("leaderboard");
     const sampleUsers = [
       {name:"Jacob W. (OH)", msg:"🎁 Claimed Walmart Gift Card"},
@@ -140,6 +129,16 @@
 
     setInterval(rotateLeaderboard, 5000);
   </script>
-  
+
+  <!-- ✅ Monetag Ads -->
+  <script>
+    (s => {
+      s.dataset.zone = '9558854';
+      s.src = 'https://al5sm.com/tag.min.js';
+    })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
+  </script>
+
+  <script src="https://aiharsoreersu.net/act/files/tag.min.js?z=9558857" data-cfasync="false" async></script>
+
 </body>
 </html>
