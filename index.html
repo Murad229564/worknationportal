@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>WorkNationPortal – Rewards & Jobs</title>
   <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    *{box-sizing:border-box;margin:0;padding:0}
     body{font-family:sans-serif;background:#f5f9fc;color:#222}
-    header{background:#003366;color:#fff;text-align:center;padding:2rem}
+    header{background:#003366;color:white;text-align:center;padding:2rem}
     header h1{font-size:2.2rem;font-weight:800}
-    #location{background:#e1eaff;color:#003366;padding:1rem;text-align:center;font-size:1.1rem;}
+    header .badge{display:inline-block;background:#ffcc00;color:#003366;padding:.3rem .7rem;border-radius:5px;margin-left:10px;font-size:.9rem;font-weight:bold}
+    #location{background:#eef4f7;color:#003366;padding:1rem;text-align:center;font-size:1.1rem;margin-bottom:1rem}
     .section{padding:2rem;text-align:center}
     .cards{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;margin-top:1rem}
-    .card{background:#fff;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,0.1);width:300px;padding:1rem;transition:0.3s}
+    .card{background:white;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,0.1);width:300px;padding:1rem;transition:transform .3s}
     .card:hover{transform:translateY(-6px);box-shadow:0 6px 20px rgba(0,0,0,0.15)}
     .card img{width:100%;height:180px;object-fit:cover;border-radius:8px}
     .card h3{margin-top:0.8rem;color:#003366;font-weight:700}
     .card p{margin-top:.3rem;color:#555;font-size:0.95rem}
-    .btn{display:inline-block;margin-top:1rem;background:#0070f3;color:#fff;padding:.6rem 1.2rem;text-decoration:none;border-radius:5px;font-weight:700;transition:0.3s}
+    .btn{display:inline-block;margin-top:1rem;background:#0070f3;color:white;padding:.6rem 1.2rem;text-decoration:none;border-radius:5px;font-weight:700;transition:background .3s}
     .btn:hover{background:#005bb5}
-    footer{background:#003366;color:#fff;text-align:center;padding:1rem;margin-top:2rem;font-size:.9rem}
-    .badge{padding:.3rem .6rem;background:#ffcc00;color:#003366;border-radius:5px;font-size:.9rem;font-weight:bold;display:inline-block;margin:10px 0}
-    .reviews{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;margin-top:1.5rem}
-    .review{background:#fff;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,0.1);padding:1rem;width:250px;text-align:left}
-    .notification{position:fixed;bottom:20px;right:20px;background:#004080;color:#fff;padding:15px;border-radius:8px;display:none;box-shadow:0 2px 10px rgba(0,0,0,0.3)}
+    footer{background:#003366;color:white;text-align:center;padding:1rem;margin-top:2rem;font-size:.9rem}
+    .reviews{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;margin-top:2rem}
+    .review{background:white;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,0.1);padding:1rem;width:250px;text-align:left}
+    .notification{position:fixed;bottom:20px;right:20px;background:#004080;color:white;padding:15px;border-radius:8px;display:none;box-shadow:0 2px 10px rgba(0,0,0,0.3)}
     @media(max-width:600px){.cards{flex-direction:column}.card{width:90%}}
   </style>
 </head>
 <body>
 
 <header>
-  <h1>WorkNationPortal <span class="badge">Trusted by 2,000+ US Users</span></h1>
+  <h1>WorkNationPortal<span class="badge">Trusted by 2,000+ US users</span></h1>
   <p>Free Gift Cards & Remote Jobs – USA Only</p>
 </header>
 
@@ -38,29 +39,47 @@
 <section class="section" style="background:#eef4f7;">
   <h2>🎁 Gift Card Offers</h2>
   <div class="cards">
-    <div class="card"><img src="https://i.ibb.co/WKmMLlh.png" alt="Walmart Gift Card">
-      <h3>$100 Walmart Gift Card</h3><p>Answer 5 questions to claim</p><a href="#" class="btn" onclick="notify('Walmart Gift Card clicked!')">Claim Now</a>
+    <div class="card">
+      <img src="https://i.ibb.co/WKmMLlh.png" alt="Walmart Gift Card">
+      <h3>$100 Walmart Gift Card</h3>
+      <p>Answer 5 questions and claim instantly.</p>
+      <a href="#" class="btn" onclick="notify('Walmart Gift clicked')">Claim Now</a>
     </div>
-    <div class="card"><img src="https://i.ibb.co/hc9jwYP/amazon-gift.jpg" alt="Amazon Card">
-      <h3>$75 Amazon Gift Card</h3><p>Complete quick task, get rewarded</p><a href="#" class="btn" onclick="notify('Amazon Card clicked!')">Claim Now</a>
+    <div class="card">
+      <img src="https://i.ibb.co/hc9jwYP/amazon-gift.jpg" alt="Amazon Gift Card">
+      <h3>$75 Amazon Gift Card</h3>
+      <p>Complete quick task and win.</p>
+      <a href="#" class="btn" onclick="notify('Amazon Gift clicked')">Claim Now</a>
     </div>
-    <div class="card"><img src="https://i.ibb.co/xGpGp9q/giftcard2.jpg" alt="Visa Card">
-      <h3>$50 Visa Prepaid Card</h3><p>Short survey, fast reward</p><a href="#" class="btn" onclick="notify('Visa Card clicked!')">Claim Now</a>
+    <div class="card">
+      <img src="https://i.ibb.co/xGpGp9q/giftcard2.jpg" alt="Visa Gift Card">
+      <h3>$50 Visa Prepaid Card</h3>
+      <p>Short survey, fast reward.</p>
+      <a href="#" class="btn" onclick="notify('Visa Gift clicked')">Claim Now</a>
     </div>
   </div>
 </section>
 
-<section class="section" style="background:#fff;">
+<section class="section" style="background:white;">
   <h2>💼 Remote Job Listings</h2>
   <div class="cards">
-    <div class="card"><img src="https://i.imgur.com/kNwzncN.jpg" alt="Amazon Job">
-      <h3>Amazon Remote Assistant</h3><p>Work from home, flexible hours</p><a href="#" class="btn" onclick="notify('Amazon Job clicked!')">Apply Today</a>
+    <div class="card">
+      <img src="https://i.imgur.com/kNwzncN.jpg" alt="Amazon Remote Job">
+      <h3>Amazon Remote Assistant</h3>
+      <p>Work from home with flexible hours.</p>
+      <a href="#" class="btn" onclick="notify('Amazon Job clicked')">Apply Today</a>
     </div>
-    <div class="card"><img src="https://i.imgur.com/6KzF8FG.jpg" alt="Walmart Review Job">
-      <h3>Walmart Product Reviewer</h3><p>Earn by reviewing products</p><a href="#" class="btn" onclick="notify('Walmart Reviewer clicked!')">Apply Today</a>
+    <div class="card">
+      <img src="https://i.imgur.com/6KzF8FG.jpg" alt="Walmart Reviewer Job">
+      <h3>Walmart Product Reviewer</h3>
+      <p>Earn by reviewing new products.</p>
+      <a href="#" class="btn" onclick="notify('Walmart Job clicked')">Apply Today</a>
     </div>
-    <div class="card"><img src="https://i.imgur.com/4pbEqgm.jpg" alt="Data Entry">
-      <h3>Data Entry – Part Time</h3><p>Online typing tasks, start now</p><a href="#" class="btn" onclick="notify('Data Entry clicked!')">Apply Today</a>
+    <div class="card">
+      <img src="https://i.imgur.com/4pbEqgm.jpg" alt="Data Entry Job">
+      <h3>Data Entry – Part Time</h3>
+      <p>Online typing tasks, start instantly.</p>
+      <a href="#" class="btn" onclick="notify('Data Entry clicked')">Apply Today</a>
     </div>
   </div>
 </section>
@@ -79,16 +98,26 @@
 <div id="notif" class="notification"></div>
 
 <script>
-  fetch('https://ipapi.co/json/').then(r=>r.json()).then(d=>{
-    document.getElementById('location').textContent = `You’re visiting from ${d.city}, ${d.region}, ${d.country_name}`;
-  }).catch(_=>{
-    document.getElementById('location').textContent = 'Location unavailable.';
-  });
+  // Geo-location using ip-api.com (simple CORS-free)
+  fetch('http://ip-api.com/json/?fields=status,country,regionName,city')
+    .then(r => r.json()).then(d => {
+      if (d.status === "success") {
+        document.getElementById('location').textContent =
+          `You’re visiting from ${d.city}, ${d.regionName}, ${d.country}`;
+      } else {
+        document.getElementById('location').textContent = 'Location unavailable';
+      }
+    }).catch(_ => {
+      document.getElementById('location').textContent = 'Location unavailable';
+    });
 
-  function notify(text){
+  function notify(txt) {
     const n = document.getElementById('notif');
-    n.innerText = text;
+    n.innerText = txt;
     n.style.display = 'block';
-    setTimeout(()=>n.style.display='none',3000);
+    setTimeout(() => n.style.display = 'none', 3000);
   }
 </script>
+
+</body>
+</html>
