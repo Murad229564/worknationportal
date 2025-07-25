@@ -23,6 +23,7 @@
     .reviews{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;margin-top:1.5rem}
     .review{background:#fff;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,0.1);padding:1rem;width:250px;text-align:left}
     .notification{position:fixed;bottom:20px;right:20px;background:#004080;color:#fff;padding:15px;border-radius:8px;display:none;box-shadow:0 2px 10px rgba(0,0,0,0.3)}
+    #timer-bar{margin-top:1rem;font-size:1.1rem;color:red;font-weight:bold}
     @media(max-width:600px){.cards{flex-direction:column}.card{width:90%}}
   </style>
 </head>
@@ -31,6 +32,7 @@
 <header>
   <h1>WorkNationPortal <span class="badge">Trusted by 2,000+ US Users</span></h1>
   <p>Free Gift Cards & Remote Jobs – USA Only</p>
+  <div id="timer-bar">⏳ Loading timer...</div>
 </header>
 
 <div id="location">Detecting your location...</div>
@@ -39,13 +41,16 @@
   <h2>🎁 Gift Card Offers</h2>
   <div class="cards">
     <div class="card"><img src="https://i.imgur.com/zOKG94b.jpg" alt="Walmart Gift Card">
-      <h3>$100 Walmart Gift Card</h3><p>Answer 5 questions om3 to claim</p><a href="https://www.gn3atrk.com/21366TBB/35RX6C7T/" class="btn" onclick="notify('Walmart Gift Card clicked!')">Claim Now</a>
+      <h3>$100 Walmart Gift Card</h3><p>Answer om3 5 questions to claim</p>
+      <a href="https://www.gn3atrk.com/21366TBB/35RX6C7T/" class="btn" target="_blank">Claim Now</a>
     </div>
     <div class="card"><img src="https://i.imgur.com/3aH1M0f.jpg" alt="Amazon Card">
-      <h3>$75 Amazon Gift Card</h3><p>Complete quick task, om3 get rewarded</p><a href="https://www.gn3atrk.com/21366TBB/35RTRGH8/" class="btn" onclick="notify('Amazon Card clicked!')">Claim Now</a>
+      <h3>$75 Amazon Gift Card</h3><p>Complete om3 quick task, get rewarded</p>
+      <a href="https://www.gn3atrk.com/21366TBB/35RTRGH8/" class="btn" target="_blank">Claim Now</a>
     </div>
     <div class="card"><img src="https://i.imgur.com/IExfAdq.jpg" alt="Visa Card">
-      <h3>$50 Visa Prepaid Card</h3><p>Short survey, nx3 fast reward</p><a href="https://nx2bs.com/c?o=104&a=4846" class="btn" onclick="notify('Visa Card clicked!')">Claim Now</a>
+      <h3>$50 Visa Prepaid Card</h3><p>Short nx3 survey, fast reward</p>
+      <a href="https://nx2bs.com/c?o=104&a=4846" class="btn" target="_blank">Claim Now</a>
     </div>
   </div>
 </section>
@@ -54,13 +59,16 @@
   <h2>💼 Remote Job Listings</h2>
   <div class="cards">
     <div class="card"><img src="https://i.imgur.com/NV3Gn4R.jpg" alt="Amazon Job">
-      <h3>Amazon Remote Assistant</h3><p>Work from home om2.4, flexible hours</p><a href="https://www.gn3atrk.com/21366TBB/4QX811T/" class="btn" onclick="notify('Amazon Job clicked!')">Apply Today</a>
+      <h3>Amazon Remote Assistant</h3><p>Work from om2.4 home, flexible hours</p>
+      <a href="https://www.gn3atrk.com/21366TBB/4QX811T/" class="btn" target="_blank">Apply Today</a>
     </div>
     <div class="card"><img src="https://i.imgur.com/t90U5mv.jpg" alt="Walmart Review Job">
-      <h3>Walmart Product Reviewer</h3><p>Earn by reviewing products</p><a href="#" class="btn" onclick="notify('Walmart Reviewer clicked!')">Apply Today</a>
+      <h3>Walmart Product Reviewer</h3><p>Earn by reviewing products</p>
+      <a href="https://your-job-link2.com" class="btn" target="_blank">Apply Today</a>
     </div>
     <div class="card"><img src="https://i.imgur.com/HnU28cM.jpg" alt="Data Entry">
-      <h3>Data Entry – Part Time</h3><p>Online typing tasks, start now</p><a href="#" class="btn" onclick="notify('Data Entry clicked!')">Apply Today</a>
+      <h3>Data Entry – Part Time</h3><p>Online typing tasks, start now</p>
+      <a href="https://your-job-link3.com" class="btn" target="_blank">Apply Today</a>
     </div>
   </div>
 </section>
@@ -104,6 +112,34 @@
     n.style.display = 'block';
     setTimeout(()=>n.style.display='none',3000);
   }
+
+  // Countdown Timer (Fixed Deadline)
+  const deadline = new Date("2025-07-18T23:59:59Z").getTime();
+  const timerBar = document.getElementById("timer-bar");
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const diff = deadline - now;
+
+    if (diff < 0) {
+      timerBar.textContent = "⛔ Offer expired!";
+      document.querySelectorAll('.btn').forEach(btn => {
+        btn.style.pointerEvents = 'none';
+        btn.style.opacity = '0.5';
+      });
+      return;
+    }
+
+    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+    timerBar.textContent = `⏳ Offer ends in: ${d}d ${h}h ${m}m ${s}s`;
+    setTimeout(updateCountdown, 1000);
+  }
+
+  updateCountdown();
 </script>
 
 </body>
