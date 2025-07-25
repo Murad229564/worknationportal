@@ -2,73 +2,104 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>🎯 Exclusive Offers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WorkNationPortal – Rewards & Jobs</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f7f7f7;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-    .location-box {
-      background: #004080;
-      color: white;
-      padding: 20px;
-      font-size: 1.2em;
-      font-weight: bold;
-    }
-    .offers-section {
-      padding: 30px 20px;
-    }
-    .offer-button {
-      display: block;
-      margin: 10px auto;
-      padding: 15px 25px;
-      background-color: #28a745;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 1.1em;
-      transition: background 0.3s;
-      max-width: 300px;
-    }
-    .offer-button:hover {
-      background-color: #218838;
-    }
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body { font-family: sans-serif; background:#f5f9fc; color:#222; }
+    header { background:#003366; color:#fff; text-align:center; padding:2rem 1rem; }
+    header h1 { font-size:2.2rem; font-weight:800; }
+    #location { background:#e1eaff; color:#003366; padding:1rem; text-align:center; font-size:1.1rem; }
+    .section { padding:2rem 1rem; text-align:center; }
+    .cards { display:flex; flex-wrap:wrap; justify-content:center; gap:1.5rem; margin-top:1rem; }
+    .card { background:#fff; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.1); width:300px; padding:1rem; transition:transform .3s ease; }
+    .card:hover { transform:translateY(-6px); box-shadow:0 6px 20px rgba(0,0,0,0.15); }
+    .card img { width:100%; height:180px; object-fit:cover; border-radius:8px; }
+    .card h3 { margin-top:0.8rem; color:#003366; font-weight:700; }
+    .card p { margin-top:.3rem; color:#555; font-size:0.95rem; }
+    .btn { display:inline-block; margin-top:1rem; background:#0070f3; color:#fff; padding:.6rem 1.2rem; text-decoration:none; border-radius:5px; font-weight:700; transition:background .3s ease; }
+    .btn:hover { background:#005bb5; }
+    footer { background:#003366; color:#fff; text-align:center; padding:1rem; margin-top:2rem; font-size:.9rem; }
+    @media(max-width:600px){ .cards{flex-direction:column;align-items:center;} .card{width:90%;} }
   </style>
 </head>
 <body>
+  <header><h1>WorkNationPortal</h1><p>Free Gift Cards & Remote Jobs – USA Only</p></header>
+  <div id="location">Detecting your location...</div>
 
-  <!-- ✅ Location Info Box -->
-  <div id="location" class="location-box">
-    Detecting your location...
-  </div>
+  <section class="section" style="background:#eef4f7;">
+    <h2>🎁 Gift Card & Job Offers</h2>
+    <div id="timer" class="cards"></div>
+    <div class="cards">
+      <div class="card">
+        <img src="https://i.ibb.co/WKmMLlh.png" alt="Walmart Gift Card">
+        <h3>$100 Walmart Gift Card</h3>
+        <p>Answer 5 questions and claim instantly.</p>
+        <a href="#" class="btn">Claim Now</a>
+      </div>
+      <div class="card">
+        <img src="https://i.ibb.co/xGpGp9q/giftcard2.jpg" alt="Visa Gift Card">
+        <h3>$50 Visa Prepaid Card</h3>
+        <p>Complete short tasks and win prize.</p>
+        <a href="#" class="btn">Claim Now</a>
+      </div>
+      <div class="card">
+        <img src="https://i.ibb.co/hc9jwYP/amazon-gift.jpg" alt="Amazon Gift Card">
+        <h3>$75 Amazon Gift Gift Card</h3>
+        <p>Simple survey, quick reward.</p>
+        <a href="#" class="btn">Claim Now</a>
+      </div>
+    </div>
+  </section>
 
-  <!-- ✅ Offer Buttons -->
-  <div class="offers-section">
-    <h2>🎁 Select a Reward Below</h2>
-    
-    <a href="https://your-cpa-link1.com" class="offer-button">🎯 $100 Walmart Gift Card</a>
-    <a href="https://your-cpa-link2.com" class="offer-button">🎯 $750 Cash App Bonus</a>
-    <a href="https://your-cpa-link3.com" class="offer-button">🎯 Win an iPhone 15 Now</a>
-  </div>
+  <section class="section" style="background:#fff;">
+    <h2>💼 Latest Remote Jobs</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="https://i.imgur.com/kNwzncN.jpg" alt="Amazon Job">
+        <h3>Amazon Remote Assistant</h3>
+        <p>Work from home with flexible hours and good pay.</p>
+        <a href="#" class="btn">Apply Today</a>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/6KzF8FG.jpg" alt="Walmart Job">
+        <h3>Walmart Product Reviewer</h3>
+        <p>Earn by reviewing new products. No experience required.</p>
+        <a href="#" class="btn">Apply Today</a>
+      </div>
+      <div class="card">
+        <img src="https://i.imgur.com/4pbEqgm.jpg" alt="Data Entry Job">
+        <h3>Data Entry - Part Time</h3>
+        <p>Perform typing tasks online. Start instantly.</p>
+        <a href="#" class="btn">Apply Today</a>
+      </div>
+    </div>
+  </section>
 
-  <!-- ✅ JS to fetch location -->
+  <footer>
+    &copy; 2025 WorkNationPortal. All rights reserved.
+  </footer>
+
   <script>
+    // Geo-location fetch
     fetch('https://ipapi.co/json/')
-      .then(response => response.json())
+      .then(r => r.json())
       .then(data => {
-        const locationBox = document.getElementById('location');
-        locationBox.textContent = `You’re visiting from ${data.city}, ${data.region}, ${data.country_name}`;
+        document.getElementById('location').textContent = `You’re visiting from ${data.city}, ${data.region}, ${data.country_name}`;
       })
-      .catch(error => {
-        document.getElementById('location').textContent = "Location could not be detected.";
-        console.error("Error fetching location:", error);
-      });
-  </script>
+      .catch(()=>c=>document.getElementById('location').textContent = 'Location unavailable');
 
+    // Countdown timer (optional dynamic)
+    const timerEl = document.getElementById('timer');
+    const end = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()+1).getTime();
+    function countdown(){
+      const now=Date.now(), diff=end-now;
+      if(diff<=0){timerEl.innerHTML='Offer expired'; return;}
+      const d=Math.floor(diff/86400000), h=Math.floor(diff%86400000/3600000);
+      const m=Math.floor(diff%3600000/60000), s=Math.floor(diff%60000/1000);
+      timerEl.innerHTML=`Offer ends in: ${d}d ${h}h ${m}m ${s}s`;
+    }
+    countdown(); setInterval(countdown,1000);
+  </script>
 </body>
 </html>
