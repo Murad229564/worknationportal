@@ -1,105 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>WorkNationPortal – Rewards & Jobs</title>
   <style>
-    * { box-sizing: border-box; margin:0; padding:0; }
-    body { font-family: sans-serif; background:#f5f9fc; color:#222; }
-    header { background:#003366; color:#fff; text-align:center; padding:2rem 1rem; }
-    header h1 { font-size:2.2rem; font-weight:800; }
-    #location { background:#e1eaff; color:#003366; padding:1rem; text-align:center; font-size:1.1rem; }
-    .section { padding:2rem 1rem; text-align:center; }
-    .cards { display:flex; flex-wrap:wrap; justify-content:center; gap:1.5rem; margin-top:1rem; }
-    .card { background:#fff; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.1); width:300px; padding:1rem; transition:transform .3s ease; }
-    .card:hover { transform:translateY(-6px); box-shadow:0 6px 20px rgba(0,0,0,0.15); }
-    .card img { width:100%; height:180px; object-fit:cover; border-radius:8px; }
-    .card h3 { margin-top:0.8rem; color:#003366; font-weight:700; }
-    .card p { margin-top:.3rem; color:#555; font-size:0.95rem; }
-    .btn { display:inline-block; margin-top:1rem; background:#0070f3; color:#fff; padding:.6rem 1.2rem; text-decoration:none; border-radius:5px; font-weight:700; transition:background .3s ease; }
-    .btn:hover { background:#005bb5; }
-    footer { background:#003366; color:#fff; text-align:center; padding:1rem; margin-top:2rem; font-size:.9rem; }
-    @media(max-width:600px){ .cards{flex-direction:column;align-items:center;} .card{width:90%;} }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:sans-serif;background:#f5f9fc;color:#222}
+    header{background:#003366;color:#fff;text-align:center;padding:2rem}
+    header h1{font-size:2.2rem;font-weight:800}
+    #location{background:#e1eaff;color:#003366;padding:1rem;text-align:center;font-size:1.1rem;}
+    .section{padding:2rem;text-align:center}
+    .cards{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;margin-top:1rem}
+    .card{background:#fff;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,0.1);width:300px;padding:1rem;transition:0.3s}
+    .card:hover{transform:translateY(-6px);box-shadow:0 6px 20px rgba(0,0,0,0.15)}
+    .card img{width:100%;height:180px;object-fit:cover;border-radius:8px}
+    .card h3{margin-top:0.8rem;color:#003366;font-weight:700}
+    .card p{margin-top:.3rem;color:#555;font-size:0.95rem}
+    .btn{display:inline-block;margin-top:1rem;background:#0070f3;color:#fff;padding:.6rem 1.2rem;text-decoration:none;border-radius:5px;font-weight:700;transition:0.3s}
+    .btn:hover{background:#005bb5}
+    footer{background:#003366;color:#fff;text-align:center;padding:1rem;margin-top:2rem;font-size:.9rem}
+    .badge{padding:.3rem .6rem;background:#ffcc00;color:#003366;border-radius:5px;font-size:.9rem;font-weight:bold;display:inline-block;margin:10px 0}
+    .reviews{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;margin-top:1.5rem}
+    .review{background:#fff;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,0.1);padding:1rem;width:250px;text-align:left}
+    .notification{position:fixed;bottom:20px;right:20px;background:#004080;color:#fff;padding:15px;border-radius:8px;display:none;box-shadow:0 2px 10px rgba(0,0,0,0.3)}
+    @media(max-width:600px){.cards{flex-direction:column}.card{width:90%}}
   </style>
 </head>
 <body>
-  <header><h1>WorkNationPortal</h1><p>Free Gift Cards & Remote Jobs – USA Only</p></header>
-  <div id="location">Detecting your location...</div>
 
-  <section class="section" style="background:#eef4f7;">
-    <h2>🎁 Gift Card & Job Offers</h2>
-    <div id="timer" class="cards"></div>
-    <div class="cards">
-      <div class="card">
-        <img src="https://i.ibb.co/WKmMLlh.png" alt="Walmart Gift Card">
-        <h3>$100 Walmart Gift Card</h3>
-        <p>Answer 5 questions and claim instantly.</p>
-        <a href="#" class="btn">Claim Now</a>
-      </div>
-      <div class="card">
-        <img src="https://i.ibb.co/xGpGp9q/giftcard2.jpg" alt="Visa Gift Card">
-        <h3>$50 Visa Prepaid Card</h3>
-        <p>Complete short tasks and win prize.</p>
-        <a href="#" class="btn">Claim Now</a>
-      </div>
-      <div class="card">
-        <img src="https://i.ibb.co/hc9jwYP/amazon-gift.jpg" alt="Amazon Gift Card">
-        <h3>$75 Amazon Gift Gift Card</h3>
-        <p>Simple survey, quick reward.</p>
-        <a href="#" class="btn">Claim Now</a>
-      </div>
+<header>
+  <h1>WorkNationPortal <span class="badge">Trusted by 2,000+ US Users</span></h1>
+  <p>Free Gift Cards & Remote Jobs – USA Only</p>
+</header>
+
+<div id="location">Detecting your location...</div>
+
+<section class="section" style="background:#eef4f7;">
+  <h2>🎁 Gift Card Offers</h2>
+  <div class="cards">
+    <div class="card"><img src="https://i.ibb.co/WKmMLlh.png" alt="Walmart Gift Card">
+      <h3>$100 Walmart Gift Card</h3><p>Answer 5 questions to claim</p><a href="#" class="btn" onclick="notify('Walmart Gift Card clicked!')">Claim Now</a>
     </div>
-  </section>
-
-  <section class="section" style="background:#fff;">
-    <h2>💼 Latest Remote Jobs</h2>
-    <div class="cards">
-      <div class="card">
-        <img src="https://i.imgur.com/kNwzncN.jpg" alt="Amazon Job">
-        <h3>Amazon Remote Assistant</h3>
-        <p>Work from home with flexible hours and good pay.</p>
-        <a href="#" class="btn">Apply Today</a>
-      </div>
-      <div class="card">
-        <img src="https://i.imgur.com/6KzF8FG.jpg" alt="Walmart Job">
-        <h3>Walmart Product Reviewer</h3>
-        <p>Earn by reviewing new products. No experience required.</p>
-        <a href="#" class="btn">Apply Today</a>
-      </div>
-      <div class="card">
-        <img src="https://i.imgur.com/4pbEqgm.jpg" alt="Data Entry Job">
-        <h3>Data Entry - Part Time</h3>
-        <p>Perform typing tasks online. Start instantly.</p>
-        <a href="#" class="btn">Apply Today</a>
-      </div>
+    <div class="card"><img src="https://i.ibb.co/hc9jwYP/amazon-gift.jpg" alt="Amazon Card">
+      <h3>$75 Amazon Gift Card</h3><p>Complete quick task, get rewarded</p><a href="#" class="btn" onclick="notify('Amazon Card clicked!')">Claim Now</a>
     </div>
-  </section>
+    <div class="card"><img src="https://i.ibb.co/xGpGp9q/giftcard2.jpg" alt="Visa Card">
+      <h3>$50 Visa Prepaid Card</h3><p>Short survey, fast reward</p><a href="#" class="btn" onclick="notify('Visa Card clicked!')">Claim Now</a>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    &copy; 2025 WorkNationPortal. All rights reserved.
-  </footer>
+<section class="section" style="background:#fff;">
+  <h2>💼 Remote Job Listings</h2>
+  <div class="cards">
+    <div class="card"><img src="https://i.imgur.com/kNwzncN.jpg" alt="Amazon Job">
+      <h3>Amazon Remote Assistant</h3><p>Work from home, flexible hours</p><a href="#" class="btn" onclick="notify('Amazon Job clicked!')">Apply Today</a>
+    </div>
+    <div class="card"><img src="https://i.imgur.com/6KzF8FG.jpg" alt="Walmart Review Job">
+      <h3>Walmart Product Reviewer</h3><p>Earn by reviewing products</p><a href="#" class="btn" onclick="notify('Walmart Reviewer clicked!')">Apply Today</a>
+    </div>
+    <div class="card"><img src="https://i.imgur.com/4pbEqgm.jpg" alt="Data Entry">
+      <h3>Data Entry – Part Time</h3><p>Online typing tasks, start now</p><a href="#" class="btn" onclick="notify('Data Entry clicked!')">Apply Today</a>
+    </div>
+  </div>
+</section>
 
-  <script>
-    // Geo-location fetch
-    fetch('https://ipapi.co/json/')
-      .then(r => r.json())
-      .then(data => {
-        document.getElementById('location').textContent = `You’re visiting from ${data.city}, ${data.region}, ${data.country_name}`;
-      })
-      .catch(()=>c=>document.getElementById('location').textContent = 'Location unavailable');
+<section class="section" style="background:#eef4f7;">
+  <h2>🗣️ Customer Reviews</h2>
+  <div class="reviews">
+    <div class="review"><strong>John S. (NY)</strong><p>"Got my $100 Walmart card in 2 days!"</p></div>
+    <div class="review"><strong>Maria G. (CA)</strong><p>"Working remote was easy and rewarding."</p></div>
+    <div class="review"><strong>Kevin L. (TX)</strong><p>"Legit site—told my friends."</p></div>
+  </div>
+</section>
 
-    // Countdown timer (optional dynamic)
-    const timerEl = document.getElementById('timer');
-    const end = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()+1).getTime();
-    function countdown(){
-      const now=Date.now(), diff=end-now;
-      if(diff<=0){timerEl.innerHTML='Offer expired'; return;}
-      const d=Math.floor(diff/86400000), h=Math.floor(diff%86400000/3600000);
-      const m=Math.floor(diff%3600000/60000), s=Math.floor(diff%60000/1000);
-      timerEl.innerHTML=`Offer ends in: ${d}d ${h}h ${m}m ${s}s`;
-    }
-    countdown(); setInterval(countdown,1000);
-  </script>
-</body>
-</html>
+<footer>&copy; 2025 WorkNationPortal | Privacy Policy | Terms | Contact Us</footer>
+
+<div id="notif" class="notification"></div>
+
+<script>
+  fetch('https://ipapi.co/json/').then(r=>r.json()).then(d=>{
+    document.getElementById('location').textContent = `You’re visiting from ${d.city}, ${d.region}, ${d.country_name}`;
+  }).catch(_=>{
+    document.getElementById('location').textContent = 'Location unavailable.';
+  });
+
+  function notify(text){
+    const n = document.getElementById('notif');
+    n.innerText = text;
+    n.style.display = 'block';
+    setTimeout(()=>n.style.display='none',3000);
+  }
+</script>
